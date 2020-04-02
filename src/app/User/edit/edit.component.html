@@ -1,0 +1,23 @@
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="text-center">Edit User</h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <label for="">Email:</label>
+                    <input [(ngModel)]="user.email" name="email" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Password:</label>
+                    <input [(ngModel)]="user.password" name="password" type="password" class="form-control">
+                </div>               
+            </form>            
+        </div>
+        <div class="card-footer text-center">
+            <button (click)="edit(user)" class="btn btn-success">Save</button>
+            <button routerLink="/showUsers" class="btn btn-success" style="margin-left: 10px;">Cancel</button>        
+        </div> 
+    </div>
+</div>

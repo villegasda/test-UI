@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="card" style="margin-top: 8px;">
+            <div class="card-header">
+                <h3 class="text-center">{{name|uppercase}}</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="">Name:</label>
+                        <input [(ngModel)]="person.name" name="name" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Last Name:</label>
+                        <input [(ngModel)]="person.lastName" name="lastname" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Birth Day:</label>
+                        <input [(ngModel)]="person.birthday" name="birthday" type="date" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Phone:</label>
+                        <input [(ngModel)]="person.celular" name="celular" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Direccion:</label>
+                        <input [(ngModel)]="person.direccion" name="direccion" type="text" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-center">
+                <button class="btn btn-success" (click)="updatePerson(person)">Save</button>
+                <button class="btn btn-success" style="margin-left: 10px;" routerLink="/showPersons">Cancel</button>
+            </div>
+        </div>
+        <div class="card" style="margin-top: 8px; margin-left: 10px;">
+            <div class="card-header">
+                <h3 class="text-center">AVATAR</h3>
+            </div>
+            <div class="card-body">
+                <img class="border border-primary rounded-circle enter"
+                            src="data:image/png;base64,{{person.foto}}"
+                            width="250px" height="250px" style="margin-top: 30%;" />
+                
+            </div>
+            <div class="card-footer">
+                <div class="file-field">
+                    <input type="file" (change)="selecionarImagen($event)">
+                </div>
+                <br>
+                <button class="btn btn-success" (click)="upload(person)" style="margin-top: 10px;">Upload</button>
+            </div>
+        </div>
+
+    </div>
+    
+</div>
